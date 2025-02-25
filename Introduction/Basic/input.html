@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var id,name,sex,age,address;
+    //input
+    id=prompt("Enter id :");
+    name=prompt("Enter name :");
+    sex=prompt("Enter sex :");
+    age=parseInt(prompt("Enter age :")); 
+    address=prompt("Enter address :");
+    //output single line
+    document.write("<h1>ID =",id,"</h1>");
+    document.write("<h1>Name ="+name+"</h1>");
+    document.write("<h1>Sex ="+sex+"</h1>");
+    document.write("<h1>Age ="+age+"</h1>");
+    document.write("<h1>Address ="+address+"</h1>");
+    // output multiple lines
+    document.write(`
+        <h1>ID = ${id}</h1>
+        <h1>Name = ${name}</h1>
+        <h1>Sex = ${sex}</h1>
+        <h1>Age = ${age}</h1>
+        <h1>Address = ${address}</h1>
+    `);
+
+</script>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // loop
+    // for loop //start,condition,step
+    // while loop
+    // do while loop
+    // for in
+    // for of
+    // forEach()
+    // map()
+    // filter()
+
+    //for loop
+    document.write("For loop :");
+    for(i=5;i>=100;i*=2){
+        document.write(i," "); // 5 10 20 40 80 
+    }
+
+    //while loop
+    i=11;
+    document.write("While loop :<br>");
+    while(i<=10){
+        document.write(i,", Hello World.<br>");
+        i++;
+    }
+    //do while loop
+    i=1;
+    do{
+        document.write("Do  while loop <br>");
+        i++;
+    }while(i>5);
+
+    const array=[1,5,7,3,9,4];
+    //using for loop
+    document.write("Using for loop to loop array :")
+    for(i=0;i<array.length;i++){
+        document.write(array[i]," ")
+    }
+    // for in
+    document.write("<br>Using for in to loop array :")
+    for(i in array){
+        document.write(i," "); 
+    }
+    //for of
+    document.write("<br>Using for of to loop array :")
+    for(i of array){
+        document.write(i," ");
+    }
+    //forEach()
+    document.write("<br>Using forEach() to loop array :")
+    const result =array.forEach((val,index,array)=>{
+        // document.write(val," ");
+        // document.write(index," ");
+        // document.write(array," ");
+        return val;
+    })
+    document.write("Result =",result);
+    //map()
+    document.write("<br>Using map() :")
+    const resultFromMap=array.map((val,index,array)=>{
+        // document.write(val," ");
+        // document.write(index," ");
+        // document.write(array," ");
+        return val;
+    })
+    document.write("Result From Map =",resultFromMap);
+    //filter()
+    document.write("<br>Using filter() :")
+    const rFilter=array.filter((val,index,array)=>{
+        // document.write(val," ");
+        // document.write(index," ");
+        // document.write(array," ");
+        return val;
+    })
+    document.write("Result From filter =",rFilter);
+
+    // compare filter and map
+
+    const rmap=array.map((val)=>{
+       return val==5; 
+    })
+    const fil=array.filter((val)=>{
+       return val==5; 
+    })
+    document.write("Compare map and filter :<br>");
+    document.write("Result from map :",rmap);
+    document.write("<br>Result from filter :",fil);
+</script>

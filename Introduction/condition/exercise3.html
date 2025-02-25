@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let id,name,sex,salary,position,income,bonus;
+    id=prompt("Enter id :");
+    name=prompt("Enter name :");
+    sex=prompt("Enter sex :");
+    salary=parseFloat(prompt("Enter salary :"));
+    position=prompt("Enter position :");
+    // if(position=="Manager" || position=="manager"){
+    //     bonus=20;
+    // }else if(position=="IT" || position=="it"){
+    //     bonus=25;
+    // }else if(position=="Accounting" || position=="accounting"){
+    //     bonus=15;
+    // }else{
+    //     bonus=10;
+    // }
+
+    //ternary operator
+    bonus=(position=="Manager") ? 20 :
+          (position=="IT") ? 25 : 
+          (position=="Accounting") ? 15:10;
+    income=salary+(salary*20)/100;
+ 
+    document.write(`
+        <h1>ID : ${id}</h1>
+        <h1>Name : ${name}</h1>
+        <h1>Sex : ${sex}</h1>
+        <h1>Salary : ${salary} $</h1>
+        <h1>Position : ${position}</h1>
+        <h1>Bonus : ${bonus}%</h1>
+        <h1>Income : ${income}$</h1>
+    `);
+</script>

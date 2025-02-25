@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    let score1,score2,score3,score4,score5,total,average;
+    score1=prompt("Enter score1 :");
+    score2=prompt("Enter score2 :");
+    score3=prompt("Enter score3 :");
+    score4=prompt("Enter score4 :");
+    score5=prompt("Enter score5 :");
+
+    total=Number(score1)+Number(score2)+Number(score3)+Number(score4)+Number(score5);
+    average=(total/5).toFixed(2);
+    document.write(`
+        <h1>Score1 : ${score1}</h1>
+        <h1>Score2 : ${score2}</h1>
+        <h1>Score3 : ${score3}</h1>
+        <h1>Score4 : ${score4}</h1>
+        <h1>Score5 : ${score5}</h1>
+        <h1>Total  : ${total}</h1>
+        <h1>Average : ${average}</h1>
+    `);
+</script>

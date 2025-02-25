@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="">First name</label>
+        <input type="text" name="" id="first_name"> <br> <br>
+        <label for="">Last name</label>
+        <input type="text" name="" id="last_name"> <br> <br>
+        <label for="">Email</label>
+        <input type="email" name="" id="email"> <br> <br>
+        <label for="">Telephone</label>
+        <input type="text" name="" id="telephone"> 
+        <button type="button" onclick="Submit()">Submit</button>
+    </form>
+    <br><br>
+    <table border="1" cellPadding="10">
+        <thead>
+            <tr>
+                <th>Fisrt Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Telephone</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    function Submit(){
+        const first_name=document.getElementById('first_name').value;
+        const last_name=document.getElementById('last_name').value;
+        const email=document.getElementById('email').value;
+        const telephone=document.getElementById('telephone').value;
+        const tbody=document.getElementById('tbody');
+        tbody.innerHTML+=`
+            <tr>
+                <td>${first_name}</td>
+                <td>${last_name}</td>
+                <td>${email}</td>
+                <td>${telephone}</td>
+            </tr>
+        `;
+        
+    }
+</script>

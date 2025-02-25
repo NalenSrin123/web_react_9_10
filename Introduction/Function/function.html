@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Sum(){ //non return function non parameter
+        var a=10,b=20;
+        sum=a+b;
+        document.write(a,'+',b,'=',a+b);
+    }
+    Sum(); 
+    function Sub(a,b){ //a,b call parameter
+        document.write("<br>",a,'-',b,'=',a-b);
+    }
+    Sub(20,5);// 20,5 call argument
+    Sub(7,5);// 7,5 call argument
+    // x=Sum()+50;
+    // document.write("<br>X=",x);
+    //return function non parameter
+    function Total(){
+        return 10+50+4+8;
+    }
+    document.write('total=',Total());
+    var z=Total()+5;
+    document.write('<br>Z=',z);
+   //return function has parameter
+
+   function Average(total){
+     return total/3;
+   }
+   document.write('<br>Average=',Average(300));
+   document.write('<br>Average=',Average(270));
+   document.write('<br>Average=',Average(240));
+   //Arrow function 
+//    const Averages=(total)=>{ //return function has pareameter
+//     return total/3;
+//    };
+   const Averages=(total)=>total/3;
+   document.write('<br>Avg=',Averages(100));
+   Input=()=>{
+    var id;
+    id=prompt("Enter id :");
+   }
+   Input();
+   
+</script>

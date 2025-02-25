@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var id,name,php,html,css,bootstrap,javascript;
+    function Input(){
+        id=prompt('Enter id :');
+        name=prompt('Enter name :');
+        php=parseFloat(prompt("Enter php :"));
+        html=parseFloat(prompt("Enter html :"));
+        css=parseFloat(prompt("Enter css :"));
+        bootstrap=parseFloat(prompt("Enter bootstrap :"));
+        javascript=parseFloat(prompt("Enter javascript :"));
+    }
+    function Total(){
+        return php+html+css+bootstrap+javascript;
+    }
+    const Average=()=>Total()/5;
+    const Grade=()=>{
+        var grade='';
+        grade=(Average()>=90) ? 'A':
+              (Average()>=80) ? 'B':  
+              (Average()>=70) ? 'C':  
+              (Average()>=60) ? 'D':  
+              (Average()>=50) ? 'E':'F';
+        return grade;        
+    };
+    Output=()=>{
+        document.write(`
+            <div class="container">
+                <table class="table table-bordered text-center" style="table-layout: fixed;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>PHP</th>
+                            <th>HTML</th>
+                            <th>CSS</th>
+                            <th>Bootstrap</th>
+                            <th>Javascript</th>
+                            <th>Total</th>
+                            <th>Average</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>${id}</td>
+                            <td>${name}</td>
+                            <td>${php}</td>
+                            <td>${html}</td>
+                            <td>${css}</td>
+                            <td>${bootstrap}</td>
+                            <td>${javascript}</td>
+                            <td>${Total()}</td>
+                            <td>${Average()}</td>
+                            <td>${Grade()}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>    
+        `);
+    }
+    Input();
+    Output();
+    Input();
+    Output();
+    
+</script>

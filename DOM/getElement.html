@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #h1{
+        color:red;
+    }
+</style>
+<body>
+    <h1 id="h1">Hello HTML</h1>
+    <button onclick="clickChange()">Click to change</button>
+</body>
+</html>
+<script>
+    //selector
+    //getElementById();
+    //getElementByTagName();
+    //getElementByName();
+    //getElementByClassName();
+    //querySelector('.h1');
+    //querySelectorAll('.h1');
+    function clickChange(){
+        const h1=document.getElementById('h1');
+        h1.innerText="Hello DOM."   
+    };
+   
+</script>
