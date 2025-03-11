@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<style>
+    .box{
+        width: 350px;
+        height: 350px;
+        background-color: blue;
+        margin-top: 30px;
+    }
+    button{
+        cursor: pointer;
+    }
+</style>
+<body>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+    <button id="toggle">Show/Hide</button>
+    <button id="stop">Stop</button>
+   <div class="box">
+
+   </div>
+</body>
+</html>
+<script>
+    // structure Jquery
+    $(document).ready(function(){
+        $('#show').click(function(){
+            // $('.box').show(1000);
+            // $('.box').fadeIn(1000);
+            $('.box').slideDown(1000);
+        })
+        $('#hide').click(function(){
+            // $('.box').hide(1000);
+            // $('.box').fadeOut(1000);
+            $('.box').slideUp(1000);
+        })
+        $('#toggle').click(function(){
+            // $('.box').toggle(1000);
+            // $('.box').fadeToggle(1000);
+            $('.box').slideToggle(1000);
+        })
+        $('#stop').clickS(function(){
+            $('.box').stop()
+        })
+    })
+</script>
