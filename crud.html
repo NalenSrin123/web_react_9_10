@@ -42,24 +42,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Bona</td>
-                    <td>Male</td>
-                    <td>PP</td>
-                    <td>3.0</td>
-                    <td><img width="80px" src="https://i.pinimg.com/736x/84/59/e9/8459e98618f904ceea429e460e7c0771.jpg" alt=""></td>
-                    <td>
-                        <button type="button" class="btn btn-warning">Edit</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
     </div>
     <div class="modals">
         <form action="">
-            <h3 class="text-center">Add Student</h3>
+            <h3 class="text-center" id="title"></h3>
             <div class="form-group">
                 <label for="id" class="form-label" >ID</label>
                 <input type="text" name="" id="id" class="form-control" disabled>
@@ -89,6 +78,7 @@
                 <input type="file" name="" id="profile" class="form-control">
             </div>
               <button type="button" class="btn btn-primary mt-3 me-2" id="save">Save</button>
+              <button type="button" class="btn btn-success mt-3 me-2" id="edit">Edit</button>
               <button type="button" class="btn btn-danger mt-3 me-2" id="cancel">Cancel</button>
         </form>
     </div>
@@ -99,7 +89,11 @@
         var i=1;
         $('#addStudent').click(function(){
             $('.modals').fadeIn(500)
-            $('#id').val(i)    
+            $('#id').val(i)  
+            clearForm()  
+            $('#edit').hide();
+            $('#save').show();
+            $('#title').text('Add Student');
         })
         $('#cancel').click(function(){
             $('.modals').fadeOut(500)
@@ -107,6 +101,76 @@
         $('#save').click(function(){
             $('.modals').fadeOut(500)
             i++;
+            const id=$('#id').val();
+            const name=$('#name').val();
+            const sex=$('#sex').val();
+            const address=$('#address').val();
+            const gpa=$('#GPA').val();
+            const profile=$('#profile')[0].files[0];  
+            $('tbody').append(`
+                <tr>
+                    <td>${id}</td>
+                    <td>${name}</td>
+                    <td>${sex}</td>
+                    <td>${address}</td>
+                    <td>${gpa}</td>
+                    <td><img width="80px" src="${URL.createObjectURL(profile)}" alt=""></td>
+                    <td>
+                        <button type="button" class="btn btn-warning" id="btnEdit">Edit</button>
+                        <button type="button" class="btn btn-danger" id="btnDelete">Delete</button>
+                    </td>
+                </tr>
+            `);
         })
+        function deleteStudent(){
+            $(document).on('click','#btnDelete',function(){
+                const tr=$(this).parents('tr');
+                tr.remove()
+            })
+        }
+        deleteStudent();
+        function clearForm(){
+            $('#name').val('');           
+            $('#sex').val('Male');            
+            $('#address').val('');
+            $('#GPA').val('');
+            $('#profile').val('')
+        }
+        function editStudent(){
+            $(document).on('click','#btnEdit',function(){
+                $('.modals').fadeIn();
+                $('#save').hide();
+                $('#edit').show();
+                $('#title').text('Edit Student');
+                const tr=$(this).parents('tr');
+                //get data from table
+                const tb_id=tr.find('td').eq(0).text();
+                const tb_name=tr.find('td').eq(1).text();
+                const tb_sex=tr.find('td').eq(2).text();
+                const tb_address=tr.find('td').eq(3).text();
+                const tb_gpa=tr.find('td').eq(4).text();
+                const tb_profile=tr.find('td').eq(5).text();
+                //insert data into form
+                $('#id').val(tb_id)
+                $('#name').val(tb_name);           
+                $('#sex').val(tb_sex);            
+                $('#address').val(tb_address);
+                $('#GPA').val(tb_gpa);
+                $('#profile').text(tb_profile);
+                //get data from form insert into table
+                $('#edit').click(function(){
+                    $('.modals').fadeOut()
+                    tr.find('td').eq(0).text($('#id').val());
+                    tr.find('td').eq(1).text($('#name').val());
+                    tr.find('td').eq(2).text($('#sex').val());
+                    tr.find('td').eq(3).text($('#address').val());
+                    tr.find('td').eq(4).text($('#GPA').val());
+                    const img =tr.find('td').eq(5).find('img');
+                   img.attr('src',URL.createObjectURL($('#profile')[0].files[0]))
+                    
+                })
+            })
+        }
+        editStudent()
     });
   </script>
