@@ -1,4 +1,4 @@
-const List = ({addStudent,students}) => {
+const List = ({addStudent,students,onDelete}) => {
     
   return (
     <>
@@ -18,7 +18,7 @@ const List = ({addStudent,students}) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {students.map((stu)=>{
+                    {students.map((stu,index)=>{
                         return (
                             <tr>
                                 <td>{stu.id}</td>
@@ -29,7 +29,7 @@ const List = ({addStudent,students}) => {
                                 <td><img width={80} src={stu.profileUrl} alt="" /></td>
                                 <td>
                                     <button className="btn btn-warning">Edit</button>
-                                    <button className="btn btn-danger ms-2">Delete</button>
+                                    <button className="btn btn-danger ms-2" onClick={()=>onDelete(index)}>Delete</button>
                                 </td>
                             </tr>
                         );

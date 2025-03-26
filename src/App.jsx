@@ -14,9 +14,14 @@ const App = () => {
   function getStudent(stu){
     setStudent((prev) => [...prev, stu]);
   }
+  function handleDelete(index){
+    if(confirm("Are you sure to delete this student ?")){
+      setStudent((pre)=>pre.filter((_,i)=>i!==index));
+    }
+  }
   return (
     <>
-      <List addStudent={handleAdd} students={student}/>
+      <List addStudent={handleAdd} students={student} onDelete={handleDelete}/>
       {toggleModal ? '':<Modal onClose={handleClose} students={getStudent}/>}
     </>
   )
