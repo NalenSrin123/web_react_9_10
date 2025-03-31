@@ -6,6 +6,10 @@
     display: grid;
     grid-template-columns: repeat(4,1fr);
     gap: 20px;
+    .link{
+        text-decoration: none;
+        color: #333;
+    }
     .card{
         width: 100%;
         height: 380px;
@@ -34,3 +38,83 @@
         
     }
 }
+
+.detail{
+    width: 80%;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    /* height: 500px; */
+    display: flex;
+    padding: 30px;
+    margin-top: 80px;
+    animation: drop 0.3s  forwards;
+    .image{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        img{
+            width: 450px;
+        }
+    }
+    .description{
+        width: 50%;
+        height: 100%;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        padding-left: 80px;
+        gap: 25px;
+        h1{
+            font-size: 30px;
+            font-weight: 600;
+        }
+        h2{
+            margin-left: 50px;
+        }
+        p{
+            margin-left: 50px;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        input{
+            width: 60px;
+            font-size: 20px;
+            outline: none;
+            border-radius: 3px;
+            border: none;
+            padding: 5px;
+            text-align: center;
+            border: 1px solid #333;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 10px 20px;
+        }
+        button:hover{
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #333;
+        }
+    }
+}
+/* @keyframes drop{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(80px);
+    }
+} */
