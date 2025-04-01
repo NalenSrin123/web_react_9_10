@@ -2,7 +2,9 @@
 import React, { useContext, useState } from 'react'
 import { APIContext } from '../Context/ContextAPI'
 import { useParams } from 'react-router-dom';
+import Payment from './Payment';
 const CoffeeDetail = () => {
+  const [togglePay,setTogglePay]=useState(true);
     const [qty,setQty] = useState(1);
     function handleQty(e){
         setQty(e.target.value);
@@ -10,10 +12,13 @@ const CoffeeDetail = () => {
     const id =useParams();
     const {coffees}=useContext(APIContext);
     const coffee = coffees.find((coffee) => coffee.id == id.id);
-    console.log(coffee);
-    
+    function handlePayment(){
+        setTogglePay(!togglePay);
+    }
   return (
-    
+      <>
+
+      
         <div className="detail">
         <div className="image">
             <img src={coffee.image} alt="" />
@@ -28,10 +33,11 @@ const CoffeeDetail = () => {
              <h1>Total :{coffee.price*qty}$</h1>
              <h1>Description</h1>
              <p>{coffee.description}</p>
-             <button>Pay</button>
-
+             <button onClick={handlePayment}>Pay</button>
         </div>
     </div>
+    {togglePay ? '':<Payment />}
+    </>
   )
 }
 

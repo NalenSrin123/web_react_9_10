@@ -11,7 +11,7 @@ const Coffees = () => {
             {coffees.map((coffee)=>{
                 return(
                     <Link className="link" to={`/coffees/${coffee.id}`} key={coffee.id}>
-                    <div className="card">
+                    <div className="cards">
                         <div className="image">
                             <img src={coffee.image} alt="" />
                         </div>
