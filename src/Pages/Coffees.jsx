@@ -16,7 +16,7 @@ const Coffees = () => {
                             <img src={coffee.image} alt="" />
                         </div>
                         <div className="title">
-                            <h3>{coffee.name}</h3> <br />
+                            <h3>{coffee.name}</h3> 
                             <p>Price:${coffee.price}</p>
                         </div>
                     </div>

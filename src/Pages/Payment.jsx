@@ -1,9 +1,11 @@
-import React from 'react'
-
-const Payment = () => {
+import '../assets/CSS/payment.css'
+const Payment = ({close}) => {
   return (
     <>
-        <h1>Hello</h1>
+        <div className="payment">
+            <img width={300} src="/public/icon/image.png" alt="" />
+            <i class="fa-solid fa-xmark" onClick={()=>close()}></i>
+        </div>
     </>
   )
 }

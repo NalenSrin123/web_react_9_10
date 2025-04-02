@@ -36,7 +36,7 @@ const CoffeeDetail = () => {
              <button onClick={handlePayment}>Pay</button>
         </div>
     </div>
-    {togglePay ? '':<Payment />}
+    {togglePay ? '':<Payment close={handlePayment}/>}
     </>
   )
 }
